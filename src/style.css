@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+
+/* ===== 禅阅 - 全局设计系统 ===== */
+
+:root {
+  /* 核心配色 - 深墨禅风 */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-surface: rgba(20, 20, 30, 0.6);
+
+  /* 文字 */
+  --text-primary: #e8e0d4;
+  --text-muted: rgba(232, 224, 212, 0.4);
+
+  /* 琥珀金 - 高亮色系 */
+  --gold: #d4a574;
+  --gold-muted: rgba(212, 165, 116, 0.6);
+  --gold-dim: rgba(212, 165, 116, 0.25);
+  --gold-glow: rgba(212, 165, 116, 0.15);
+
+  /* 字体 */
+  --font-serif: 'Noto Serif SC', 'SimSun', 'PMingLiU', serif;
+  --font-display: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  --font-pinyin: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== 全局基础 ===== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+}
+
+/* ===== 微妙背景纹理 ===== */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212, 165, 116, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(100, 80, 60, 0.02) 0%, transparent 50%);
+}
+
+/* ===== ruby 精调排版 ===== */
+
+ruby {
+  ruby-align: center;
+  ruby-position: over;
+}
+
+rt {
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 400;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* ===== 选中样式 ===== */
+
+::selection {
+  background: rgba(212, 165, 116, 0.25);
+  color: var(--text-primary);
+}
+
+/* ===== 全局滚动条 ===== */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 165, 116, 0.12);
+  border-radius: 2px;
+}
+
+/* ===== App 容器 ===== */
+
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
