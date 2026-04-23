@@ -1,20 +1,38 @@
 <script setup>
-defineProps({
-  title: Array, // [{text, pinyin}]
-  author: Array,
+import { computed } from 'vue'
+
+const props = defineProps({
+  title: [Array, String],
+  subtitle: [Array, String],
+  author: [Array, String],
 })
+
+const normalize = (val) => {
+  if (!val) return []
+  if (Array.isArray(val)) return val
+  return String(val).split('').map(char => ({ text: char }))
+}
+
+const nTitle = computed(() => normalize(props.title))
+const nSubtitle = computed(() => normalize(props.subtitle))
+const nAuthor = computed(() => normalize(props.author))
 </script>
 
 <template>
   <header class="sutra-header">
     <div class="ornament">◈</div>
     <h1 class="sutra-title">
-      <ruby v-for="(char, i) in title" :key="`t-${i}`">
+      <ruby v-for="(char, i) in nTitle" :key="`t-${i}`">
         {{ char.text }}<rt v-if="char.pinyin">{{ char.pinyin }}</rt>
       </ruby>
     </h1>
-    <p class="sutra-author">
-      <ruby v-for="(char, i) in author" :key="`a-${i}`">
+    <h2 v-if="nSubtitle.length" class="sutra-subtitle">
+      <ruby v-for="(char, i) in nSubtitle" :key="`s-${i}`">
+        {{ char.text }}<rt v-if="char.pinyin">{{ char.pinyin }}</rt>
+      </ruby>
+    </h2>
+    <p v-if="nAuthor.length" class="sutra-author">
+      <ruby v-for="(char, i) in nAuthor" :key="`a-${i}`">
         <template v-if="char.text !== ' '">{{ char.text }}</template>
         <span v-else>&nbsp;&nbsp;</span>
         <rt v-if="char.pinyin">{{ char.pinyin }}</rt>
@@ -57,11 +75,24 @@ defineProps({
   gap: 2px;
 }
 
-.sutra-title ruby {
-  margin-right: 6px;
+.sutra-title ruby { margin-right: 6px; }
+
+.sutra-subtitle {
+  font-family: 'Noto Serif SC', 'KaiTi', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 8px;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0.9;
 }
 
-.sutra-title rt {
+.sutra-subtitle ruby { margin-right: 4px; }
+
+.sutra-title rt, .sutra-subtitle rt {
   font-family: var(--font-pinyin);
   font-size: 13px;
   font-weight: 400;
@@ -83,9 +114,7 @@ defineProps({
   gap: 2px;
 }
 
-.sutra-author ruby {
-  margin-right: 2px;
-}
+.sutra-author ruby { margin-right: 2px; }
 
 .sutra-author rt {
   font-family: var(--font-pinyin);
@@ -107,12 +136,7 @@ defineProps({
 .divider-line {
   width: 80px;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold-dim),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
 }
 
 .divider-dot {
@@ -123,23 +147,13 @@ defineProps({
 }
 
 @keyframes headerFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 640px) {
-  .sutra-title {
-    font-size: 26px;
-    letter-spacing: 6px;
-  }
-  .sutra-header {
-    padding: 40px 16px 28px;
-  }
+  .sutra-title { font-size: 26px; letter-spacing: 6px; }
+  .sutra-subtitle { font-size: 18px; letter-spacing: 4px; }
+  .sutra-header { padding: 40px 16px 28px; }
 }
 </style>

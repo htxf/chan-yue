@@ -1,0 +1,915 @@
+{
+  "chapterId": "chapter_2",
+  "title": [
+    { "text": "善", "pinyin": "shàn" },
+    { "text": "现", "pinyin": "xiàn" },
+    { "text": "启", "pinyin": "qǐ" },
+    { "text": "请", "pinyin": "qǐng" },
+    { "text": "分", "pinyin": "fēn" },
+    { "text": "第", "pinyin": "dì" },
+    { "text": "二", "pinyin": "èr" }
+  ],
+  "paragraphs": [
+    {
+      "lines": [
+        {
+          "lineStart": 0.1,
+          "lineEnd": 0.403,
+          "chars": [
+            {
+              "text": "时",
+              "pinyin": "shí"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 0.403,
+          "lineEnd": 4.342,
+          "chars": [
+            {
+              "text": "长",
+              "pinyin": "zhǎng"
+            },
+            {
+              "text": "老",
+              "pinyin": "lǎo"
+            },
+            {
+              "text": "须",
+              "pinyin": "xū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "提",
+              "pinyin": "tí"
+            },
+            {
+              "text": "在",
+              "pinyin": "zài"
+            },
+            {
+              "text": "大",
+              "pinyin": "dà"
+            },
+            {
+              "text": "众",
+              "pinyin": "zhòng"
+            },
+            {
+              "text": "中",
+              "pinyin": "zhōng"
+            },
+            {
+              "text": "即",
+              "pinyin": "jí"
+            },
+            {
+              "text": "从",
+              "pinyin": "cóng"
+            },
+            {
+              "text": "座",
+              "pinyin": "zuò"
+            },
+            {
+              "text": "起",
+              "pinyin": "qǐ"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 4.342,
+          "lineEnd": 5.554,
+          "chars": [
+            {
+              "text": "偏",
+              "pinyin": "piān"
+            },
+            {
+              "text": "袒",
+              "pinyin": "tǎn"
+            },
+            {
+              "text": "右",
+              "pinyin": "yòu"
+            },
+            {
+              "text": "肩",
+              "pinyin": "jiān"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 5.554,
+          "lineEnd": 6.766,
+          "chars": [
+            {
+              "text": "右",
+              "pinyin": "yòu"
+            },
+            {
+              "text": "膝",
+              "pinyin": "xī"
+            },
+            {
+              "text": "着",
+              "pinyin": "zhuó"
+            },
+            {
+              "text": "地",
+              "pinyin": "dì"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 6.766,
+          "lineEnd": 9.19,
+          "chars": [
+            {
+              "text": "合",
+              "pinyin": "hé"
+            },
+            {
+              "text": "掌",
+              "pinyin": "zhǎng"
+            },
+            {
+              "text": "恭",
+              "pinyin": "gōng"
+            },
+            {
+              "text": "敬",
+              "pinyin": "jìng"
+            },
+            {
+              "text": "而",
+              "pinyin": "ér"
+            },
+            {
+              "text": "白",
+              "pinyin": "bái"
+            },
+            {
+              "text": "佛",
+              "pinyin": "fó"
+            },
+            {
+              "text": "言",
+              "pinyin": "yán"
+            },
+            {
+              "text": "："
+            }
+          ]
+        },
+        {
+          "lineStart": 9.19,
+          "lineEnd": 9.796,
+          "chars": [
+            {
+              "text": "“"
+            },
+            {
+              "text": "希",
+              "pinyin": "xī"
+            },
+            {
+              "text": "有",
+              "pinyin": "yǒu"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 9.796,
+          "lineEnd": 10.402,
+          "chars": [
+            {
+              "text": "世",
+              "pinyin": "shì"
+            },
+            {
+              "text": "尊",
+              "pinyin": "zūn"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 10.402,
+          "lineEnd": 12.826,
+          "chars": [
+            {
+              "text": "如",
+              "pinyin": "rú"
+            },
+            {
+              "text": "来",
+              "pinyin": "lái"
+            },
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "护",
+              "pinyin": "hù"
+            },
+            {
+              "text": "念",
+              "pinyin": "niàn"
+            },
+            {
+              "text": "诸",
+              "pinyin": "zhū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "萨",
+              "pinyin": "sà"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 12.826,
+          "lineEnd": 14.644,
+          "chars": [
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "付",
+              "pinyin": "fù"
+            },
+            {
+              "text": "嘱",
+              "pinyin": "zhǔ"
+            },
+            {
+              "text": "诸",
+              "pinyin": "zhū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "萨",
+              "pinyin": "sà"
+            },
+            {
+              "text": "。"
+            }
+          ]
+        },
+        {
+          "lineStart": 14.644,
+          "lineEnd": 15.25,
+          "chars": [
+            {
+              "text": "世",
+              "pinyin": "shì"
+            },
+            {
+              "text": "尊",
+              "pinyin": "zūn"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 15.25,
+          "lineEnd": 17.068,
+          "chars": [
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "男",
+              "pinyin": "nán"
+            },
+            {
+              "text": "子",
+              "pinyin": "zǐ"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "女",
+              "pinyin": "nǚ"
+            },
+            {
+              "text": "人",
+              "pinyin": "rén"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 17.068,
+          "lineEnd": 20.401,
+          "chars": [
+            {
+              "text": "发",
+              "pinyin": "fā"
+            },
+            {
+              "text": "阿",
+              "pinyin": "ā"
+            },
+            {
+              "text": "耨",
+              "pinyin": "nòu"
+            },
+            {
+              "text": "多",
+              "pinyin": "duō"
+            },
+            {
+              "text": "罗",
+              "pinyin": "luó"
+            },
+            {
+              "text": "三",
+              "pinyin": "sān"
+            },
+            {
+              "text": "藐",
+              "pinyin": "miǎo"
+            },
+            {
+              "text": "三",
+              "pinyin": "sān"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "提",
+              "pinyin": "tí"
+            },
+            {
+              "text": "心",
+              "pinyin": "xīn"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 20.401,
+          "lineEnd": 21.613,
+          "chars": [
+            {
+              "text": "应",
+              "pinyin": "yīng"
+            },
+            {
+              "text": "云",
+              "pinyin": "yún"
+            },
+            {
+              "text": "何",
+              "pinyin": "hé"
+            },
+            {
+              "text": "住",
+              "pinyin": "zhù"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 21.613,
+          "lineEnd": 23.431,
+          "chars": [
+            {
+              "text": "云",
+              "pinyin": "yún"
+            },
+            {
+              "text": "何",
+              "pinyin": "hé"
+            },
+            {
+              "text": "降",
+              "pinyin": "xiáng"
+            },
+            {
+              "text": "伏",
+              "pinyin": "fú"
+            },
+            {
+              "text": "其",
+              "pinyin": "qí"
+            },
+            {
+              "text": "心",
+              "pinyin": "xīn"
+            },
+            {
+              "text": "？"
+            },
+            {
+              "text": "”"
+            }
+          ]
+        }
+      ],
+      "startTime": 0.1,
+      "endTime": 23.431
+    },
+    {
+      "lines": [
+        {
+          "lineStart": 23.431,
+          "lineEnd": 24.037,
+          "chars": [
+            {
+              "text": "佛",
+              "pinyin": "fó"
+            },
+            {
+              "text": "言",
+              "pinyin": "yán"
+            },
+            {
+              "text": "："
+            }
+          ]
+        },
+        {
+          "lineStart": 24.037,
+          "lineEnd": 24.643,
+          "chars": [
+            {
+              "text": "“"
+            },
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "哉",
+              "pinyin": "zāi"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 24.643,
+          "lineEnd": 25.249,
+          "chars": [
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "哉",
+              "pinyin": "zāi"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 25.249,
+          "lineEnd": 26.158,
+          "chars": [
+            {
+              "text": "须",
+              "pinyin": "xū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "提",
+              "pinyin": "tí"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 26.158,
+          "lineEnd": 27.37,
+          "chars": [
+            {
+              "text": "如",
+              "pinyin": "rú"
+            },
+            {
+              "text": "汝",
+              "pinyin": "rǔ"
+            },
+            {
+              "text": "所",
+              "pinyin": "suǒ"
+            },
+            {
+              "text": "说",
+              "pinyin": "shuō"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 27.37,
+          "lineEnd": 29.794,
+          "chars": [
+            {
+              "text": "如",
+              "pinyin": "rú"
+            },
+            {
+              "text": "来",
+              "pinyin": "lái"
+            },
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "护",
+              "pinyin": "hù"
+            },
+            {
+              "text": "念",
+              "pinyin": "niàn"
+            },
+            {
+              "text": "诸",
+              "pinyin": "zhū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "萨",
+              "pinyin": "sà"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 29.794,
+          "lineEnd": 31.612,
+          "chars": [
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "付",
+              "pinyin": "fù"
+            },
+            {
+              "text": "嘱",
+              "pinyin": "zhǔ"
+            },
+            {
+              "text": "诸",
+              "pinyin": "zhū"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "萨",
+              "pinyin": "sà"
+            },
+            {
+              "text": "。"
+            }
+          ]
+        },
+        {
+          "lineStart": 31.612,
+          "lineEnd": 32.824,
+          "chars": [
+            {
+              "text": "汝",
+              "pinyin": "rǔ"
+            },
+            {
+              "text": "今",
+              "pinyin": "jīn"
+            },
+            {
+              "text": "谛",
+              "pinyin": "dì"
+            },
+            {
+              "text": "听",
+              "pinyin": "tīng"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 32.824,
+          "lineEnd": 34.036,
+          "chars": [
+            {
+              "text": "当",
+              "pinyin": "dāng"
+            },
+            {
+              "text": "为",
+              "pinyin": "wèi"
+            },
+            {
+              "text": "汝",
+              "pinyin": "rǔ"
+            },
+            {
+              "text": "说",
+              "pinyin": "shuō"
+            },
+            {
+              "text": "。"
+            }
+          ]
+        },
+        {
+          "lineStart": 34.036,
+          "lineEnd": 35.854,
+          "chars": [
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "男",
+              "pinyin": "nán"
+            },
+            {
+              "text": "子",
+              "pinyin": "zǐ"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "善",
+              "pinyin": "shàn"
+            },
+            {
+              "text": "女",
+              "pinyin": "nǚ"
+            },
+            {
+              "text": "人",
+              "pinyin": "rén"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 35.854,
+          "lineEnd": 39.187,
+          "chars": [
+            {
+              "text": "发",
+              "pinyin": "fā"
+            },
+            {
+              "text": "阿",
+              "pinyin": "ā"
+            },
+            {
+              "text": "耨",
+              "pinyin": "nòu"
+            },
+            {
+              "text": "多",
+              "pinyin": "duō"
+            },
+            {
+              "text": "罗",
+              "pinyin": "luó"
+            },
+            {
+              "text": "三",
+              "pinyin": "sān"
+            },
+            {
+              "text": "藐",
+              "pinyin": "miǎo"
+            },
+            {
+              "text": "三",
+              "pinyin": "sān"
+            },
+            {
+              "text": "菩",
+              "pinyin": "pú"
+            },
+            {
+              "text": "提",
+              "pinyin": "tí"
+            },
+            {
+              "text": "心",
+              "pinyin": "xīn"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 39.187,
+          "lineEnd": 40.399,
+          "chars": [
+            {
+              "text": "应",
+              "pinyin": "yīng"
+            },
+            {
+              "text": "如",
+              "pinyin": "rú"
+            },
+            {
+              "text": "是",
+              "pinyin": "shì"
+            },
+            {
+              "text": "住",
+              "pinyin": "zhù"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 40.399,
+          "lineEnd": 42.217,
+          "chars": [
+            {
+              "text": "如",
+              "pinyin": "rú"
+            },
+            {
+              "text": "是",
+              "pinyin": "shì"
+            },
+            {
+              "text": "降",
+              "pinyin": "xiáng"
+            },
+            {
+              "text": "伏",
+              "pinyin": "fú"
+            },
+            {
+              "text": "其",
+              "pinyin": "qí"
+            },
+            {
+              "text": "心",
+              "pinyin": "xīn"
+            },
+            {
+              "text": "。"
+            },
+            {
+              "text": "”"
+            }
+          ]
+        }
+      ],
+      "startTime": 23.431,
+      "endTime": 42.217
+    },
+    {
+      "lines": [
+        {
+          "lineStart": 42.217,
+          "lineEnd": 42.823,
+          "chars": [
+            {
+              "text": "“"
+            },
+            {
+              "text": "唯",
+              "pinyin": "wéi"
+            },
+            {
+              "text": "然",
+              "pinyin": "rán"
+            },
+            {
+              "text": "，"
+            }
+          ]
+        },
+        {
+          "lineStart": 42.823,
+          "lineEnd": 43.429,
+          "chars": [
+            {
+              "text": "世",
+              "pinyin": "shì"
+            },
+            {
+              "text": "尊",
+              "pinyin": "zūn"
+            },
+            {
+              "text": "！"
+            }
+          ]
+        },
+        {
+          "lineStart": 43.429,
+          "lineEnd": 44.641,
+          "chars": [
+            {
+              "text": "愿",
+              "pinyin": "yuàn"
+            },
+            {
+              "text": "乐",
+              "pinyin": "yào"
+            },
+            {
+              "text": "欲",
+              "pinyin": "yù"
+            },
+            {
+              "text": "闻",
+              "pinyin": "wén"
+            },
+            {
+              "text": "。"
+            },
+            {
+              "text": "”"
+            }
+          ]
+        }
+      ],
+      "startTime": 42.217,
+      "endTime": 44.641
+    }
+  ],
+  "audioUrl": "/audio/jingangjing/chapter_2.mp3"
+}

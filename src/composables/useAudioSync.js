@@ -4,9 +4,9 @@
  * 使用 requestAnimationFrame 监听播放进度，
  * 二分查找算法定位当前高亮段落。
  */
-import { ref, onUnmounted, computed } from 'vue'
+import { ref, onUnmounted, computed, unref } from 'vue'
 
-export function useAudioSync(paragraphs) {
+export function useAudioSync(paragraphs, options = {}) {
   const audio = new Audio()
   const currentTime = ref(0)
   const duration = ref(0)
@@ -23,7 +23,8 @@ export function useAudioSync(paragraphs) {
 
   // ---- 二分查找当前段落 ----
   function findCurrentParagraph(time) {
-    const ps = paragraphs
+    const ps = unref(paragraphs)
+    if (!ps || ps.length === 0) return -1
     let lo = 0, hi = ps.length - 1, result = -1
     while (lo <= hi) {
       const mid = (lo + hi) >>> 1
@@ -70,6 +71,7 @@ export function useAudioSync(paragraphs) {
     audio.addEventListener('ended', () => {
       isPlaying.value = false
       stopLoop()
+      if (options.onEnded) options.onEnded()
     })
   }
 

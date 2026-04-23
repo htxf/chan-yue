@@ -1,0 +1,41 @@
+{
+  "id": "jingangjing",
+  "title": [
+    { "text": "金", "pinyin": "jīn" },
+    { "text": "刚", "pinyin": "gāng" },
+    { "text": "般", "pinyin": "bō" },
+    { "text": "若", "pinyin": "rě" },
+    { "text": "波", "pinyin": "bō" },
+    { "text": "罗", "pinyin": "luó" },
+    { "text": "蜜", "pinyin": "mì" },
+    { "text": "多", "pinyin": "duō" },
+    { "text": "经", "pinyin": "jīng" }
+  ],
+  "author": [
+    { "text": "姚", "pinyin": "yáo" },
+    { "text": "秦", "pinyin": "qín" },
+    { "text": "三", "pinyin": "sān" },
+    { "text": "藏", "pinyin": "zàng" },
+    { "text": "法", "pinyin": "fǎ" },
+    { "text": "师", "pinyin": "shī" },
+    { "text": "鸠", "pinyin": "jiū" },
+    { "text": "摩", "pinyin": "mó" },
+    { "text": "罗", "pinyin": "luó" },
+    { "text": "什", "pinyin": "shí" },
+    { "text": "译", "pinyin": "yì" }
+  ],
+  "chapters": [
+    {
+      "chapterId": "chapter_1",
+      "title": "法会因由分第一"
+    },
+    {
+      "chapterId": "chapter_2",
+      "title": "善现启请分第二"
+    },
+    {
+      "chapterId": "chapter_3",
+      "title": "大乘正宗分第三"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "xinjing",
+  "title": [
+    { "text": "般", "pinyin": "bō" },
+    { "text": "若", "pinyin": "rě" },
+    { "text": "心", "pinyin": "xīn" },
+    { "text": "经", "pinyin": "jīng" }
+  ],
+  "author": [
+    { "text": "唐", "pinyin": "táng" },
+    { "text": "玄", "pinyin": "xuán" },
+    { "text": "奘", "pinyin": "zàng" },
+    { "text": "译", "pinyin": "yì" }
+  ],
+  "chapters": [
+    {
+      "id": "chapter_1",
+      "title": "般若波罗蜜多心经"
+    }
+  ]
+}
