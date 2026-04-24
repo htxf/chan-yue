@@ -31,9 +31,18 @@ const activeLineIndex = computed(() => {
   )
 })
 
+let isFirstActivation = true
+
 /* 激活行变化时，丝滑滚动到屏幕中央 */
 watch(activeLineIndex, async (idx) => {
   if (idx < 0) return
+  
+  // 禁用初次进场时的强制滚动，避免与外层 Tailwind 进场动画冲突拉扯
+  if (isFirstActivation) {
+    isFirstActivation = false
+    if (idx === 0) return
+  }
+  
   await nextTick()
   const el = lineRefs.value[idx]
   el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -44,7 +53,6 @@ watch(activeLineIndex, async (idx) => {
   <div
     class="sutra-paragraph"
     :class="[`mode-${mode}`, { active }]"
-    :style="{ animationDelay: `${index * 0.06 + 0.3}s` }"
   >
     <div
       v-for="(line, li) in paragraph.lines"
@@ -73,8 +81,6 @@ watch(activeLineIndex, async (idx) => {
   border-radius: 8px;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  animation: paragraphFadeIn 0.8s ease forwards;
 }
 
 /* 阅读模式：全亮 */
@@ -173,11 +179,7 @@ watch(activeLineIndex, async (idx) => {
   padding-bottom: 2px;
 }
 
-/* ===== 入场动画 ===== */
-@keyframes paragraphFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+
 
 /* ===== 移动端 ===== */
 @media (max-width: 640px) {

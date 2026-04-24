@@ -24,6 +24,9 @@ defineProps({
       :currentTime="currentTime"
       :mode="mode"
     />
+    
+    <slot name="footer"></slot>
+    
     <!-- 底部留白，避免被播放条遮挡 -->
     <div class="bottom-spacer"></div>
   </div>

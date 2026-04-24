@@ -10,9 +10,11 @@ const props = defineProps({
   duration: Number,
   isPlaying: Boolean,
   progress: Number,
+  autoPlay: Boolean,
+  isZenMode: Boolean,
 })
 
-const emit = defineEmits(['toggle', 'seek'])
+const emit = defineEmits(['toggle', 'seek', 'update:autoPlay', 'update:isZenMode'])
 
 /** 格式化时间 mm:ss */
 function fmt(sec) {
@@ -66,6 +68,23 @@ function onProgressClick(e) {
     </div>
 
     <span class="time-display">{{ timeDisplay }}</span>
+    
+    <button 
+      class="zen-btn" 
+      @click="emit('update:isZenMode', !isZenMode)"
+      title="禅定模式"
+    >
+      🌙
+    </button>
+
+    <button 
+      class="auto-play-btn" 
+      :class="autoPlay ? 'is-on' : 'is-off'"
+      @click="emit('update:autoPlay', !autoPlay)"
+      :title="autoPlay ? '自动连播：已开启' : '自动连播：已关闭'"
+    >
+      连播: {{ autoPlay ? '开' : '关' }}
+    </button>
   </div>
 </template>
 
@@ -161,6 +180,46 @@ function onProgressClick(e) {
   min-width: 80px;
   text-align: right;
   letter-spacing: 0.5px;
+}
+
+.auto-play-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  min-width: 50px;
+  text-align: left;
+}
+
+.auto-play-btn.is-on {
+  color: rgba(212, 175, 55, 0.8);
+}
+
+.auto-play-btn.is-off {
+  color: var(--text-muted);
+}
+
+.auto-play-btn:hover {
+  filter: brightness(1.2);
+}
+
+.zen-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.zen-btn:hover {
+  opacity: 1;
 }
 
 @media (max-width: 640px) {

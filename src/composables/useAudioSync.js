@@ -60,6 +60,34 @@ export function useAudioSync(paragraphs, options = {}) {
     }
   }
 
+  // ---- Media Session API ----
+  function setupMediaSession() {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.setActionHandler('play', () => { play() })
+      navigator.mediaSession.setActionHandler('pause', () => { pause() })
+      if (options.onPrev) {
+        navigator.mediaSession.setActionHandler('previoustrack', options.onPrev)
+      }
+      if (options.onNext) {
+        navigator.mediaSession.setActionHandler('nexttrack', options.onNext)
+      }
+    }
+  }
+
+  function updateMediaSession(meta) {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: meta.title || '未知章节',
+        artist: meta.artist || '禅阅',
+        album: meta.album || '禅阅',
+        artwork: [
+          { src: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/icon-512x512.png', sizes: '512x512', type: 'image/png' }
+        ]
+      })
+    }
+  }
+
   // ---- 公开方法 ----
   function loadAudio(url) {
     audio.src = url
@@ -73,6 +101,7 @@ export function useAudioSync(paragraphs, options = {}) {
       stopLoop()
       if (options.onEnded) options.onEnded()
     })
+    setupMediaSession()
   }
 
   function play() {
@@ -123,5 +152,6 @@ export function useAudioSync(paragraphs, options = {}) {
     toggle,
     seek,
     seekByPercent,
+    updateMediaSession,
   }
 }
