@@ -8,6 +8,7 @@ import { ref, onUnmounted, computed, unref } from 'vue'
 
 export function useAudioSync(paragraphs, options = {}) {
   const audio = new Audio()
+  audio.preload = 'auto'
   const currentTime = ref(0)
   const duration = ref(0)
   const isPlaying = ref(false)
@@ -88,21 +89,30 @@ export function useAudioSync(paragraphs, options = {}) {
     }
   }
 
-  // ---- 公开方法 ----
   function loadAudio(url) {
-    audio.src = url
-    audio.preload = 'auto'
-    audio.addEventListener('loadedmetadata', () => {
-      duration.value = audio.duration
-      isLoaded.value = true
-    })
-    audio.addEventListener('ended', () => {
-      isPlaying.value = false
-      stopLoop()
-      if (options.onEnded) options.onEnded()
-    })
+    if (!audio.src.endsWith(url)) {
+      audio.src = url
+    }
     setupMediaSession()
   }
+
+  function playNextTrack(url) {
+    audio.src = url
+    audio.play()
+    isPlaying.value = true
+    startLoop()
+  }
+
+  audio.addEventListener('loadedmetadata', () => {
+    duration.value = audio.duration
+    isLoaded.value = true
+  })
+
+  audio.addEventListener('ended', () => {
+    isPlaying.value = false
+    stopLoop()
+    if (options.onEnded) options.onEnded()
+  })
 
   function play() {
     audio.play()
@@ -153,5 +163,6 @@ export function useAudioSync(paragraphs, options = {}) {
     seek,
     seekByPercent,
     updateMediaSession,
+    playNextTrack,
   }
 }

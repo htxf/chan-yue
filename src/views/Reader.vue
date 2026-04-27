@@ -50,12 +50,14 @@ const {
   pause,
   seekByPercent,
   updateMediaSession,
+  playNextTrack,
 } = useAudioSync(paragraphsRef, {
   onEnded: () => {
     if (autoPlayNext.value && nextChapter.value) {
-      autoPlayTimer = setTimeout(() => {
-        goToNextChapter()
-      }, 3000)
+      const nextId = nextChapter.value.id || nextChapter.value.chapterId
+      const audioUrl = `/audio/${bookId.value}/${nextId}.mp3`
+      playNextTrack(audioUrl)
+      goToNextChapter(true)
     }
   },
   onNext: () => goToNextChapter(),
@@ -96,8 +98,11 @@ const nextChapter = computed(() => {
   return null
 })
 
-function goToNextChapter() {
+let isAutoPlayingNext = false
+
+function goToNextChapter(isAutoPlay = false) {
   if (nextChapter.value) {
+    if (isAutoPlay) isAutoPlayingNext = true
     selectChapter(nextChapter.value.id || nextChapter.value.chapterId)
   }
 }
@@ -135,7 +140,9 @@ async function loadChapterData() {
   // 如果是『首次从首页进入』，不需要等，直接去拉数据。
   if (chapterData.value) {
     await new Promise(resolve => setTimeout(resolve, 350))
-    pause()
+    if (!isAutoPlayingNext) {
+      pause()
+    }
   }
 
   try {
@@ -157,12 +164,15 @@ async function loadChapterData() {
       loadAudio(audioUrl)
       // Auto-play next chapter in listening mode
       if (mode.value === 'listening') {
-        setTimeout(() => play(), 600)
+        if (!isAutoPlayingNext) {
+          setTimeout(() => play(), 600)
+        }
       }
     } else {
-      pause()
+      if (!isAutoPlayingNext) pause()
       mode.value = 'reading'
     }
+    isAutoPlayingNext = false // Reset the flag
     
     // 等待 Vue 渲染出新 DOM 的高度
     await nextTick()
@@ -310,8 +320,13 @@ function handleToggle() {
           class="fixed inset-0 z-[9999] bg-black flex items-center justify-center cursor-pointer" 
           @click="isZenMode = false"
         >
-          <div class="text-neutral-500 font-serif text-lg tracking-[0.2em] zen-text">
-            正在持诵：{{ extractText(bookMeta?.title) }} · {{ extractText(chapterData?.title) }}
+          <div class="px-8 md:px-12 text-center zen-text flex flex-col items-center">
+            <div class="text-sm text-neutral-600 tracking-[0.4em] mb-6 font-serif">
+              正在持诵 · {{ extractText(bookMeta?.title) }}
+            </div>
+            <div class="text-2xl md:text-3xl text-amber-100/30 tracking-[0.2em] font-serif leading-relaxed">
+              {{ extractText(chapterData?.title) }}
+            </div>
           </div>
         </div>
       </transition>
@@ -326,13 +341,19 @@ function handleToggle() {
   overflow-x: hidden;
 }
 
-@keyframes zen-pulse {
-  0% { opacity: 0.1; }
-  100% { opacity: 0.4; }
+@keyframes zen-breathing {
+  0% { 
+    text-shadow: none;
+    transform: scale(1);
+  }
+  100% { 
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
+  }
 }
 
 .zen-text {
-  animation: zen-pulse 4s ease-in-out infinite alternate;
+  animation: zen-breathing 8s ease-in-out infinite alternate;
 }
 
 /* Drawer */

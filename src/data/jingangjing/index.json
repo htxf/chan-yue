@@ -1,28 +1,88 @@
 {
   "id": "jingangjing",
   "title": [
-    { "text": "金", "pinyin": "jīn" },
-    { "text": "刚", "pinyin": "gāng" },
-    { "text": "般", "pinyin": "bō" },
-    { "text": "若", "pinyin": "rě" },
-    { "text": "波", "pinyin": "bō" },
-    { "text": "罗", "pinyin": "luó" },
-    { "text": "蜜", "pinyin": "mì" },
-    { "text": "多", "pinyin": "duō" },
-    { "text": "经", "pinyin": "jīng" }
+    {
+      "text": "金",
+      "pinyin": "jīn"
+    },
+    {
+      "text": "刚",
+      "pinyin": "gāng"
+    },
+    {
+      "text": "般",
+      "pinyin": "bō"
+    },
+    {
+      "text": "若",
+      "pinyin": "rě"
+    },
+    {
+      "text": "波",
+      "pinyin": "bō"
+    },
+    {
+      "text": "罗",
+      "pinyin": "luó"
+    },
+    {
+      "text": "蜜",
+      "pinyin": "mì"
+    },
+    {
+      "text": "多",
+      "pinyin": "duō"
+    },
+    {
+      "text": "经",
+      "pinyin": "jīng"
+    }
   ],
   "author": [
-    { "text": "姚", "pinyin": "yáo" },
-    { "text": "秦", "pinyin": "qín" },
-    { "text": "三", "pinyin": "sān" },
-    { "text": "藏", "pinyin": "zàng" },
-    { "text": "法", "pinyin": "fǎ" },
-    { "text": "师", "pinyin": "shī" },
-    { "text": "鸠", "pinyin": "jiū" },
-    { "text": "摩", "pinyin": "mó" },
-    { "text": "罗", "pinyin": "luó" },
-    { "text": "什", "pinyin": "shí" },
-    { "text": "译", "pinyin": "yì" }
+    {
+      "text": "姚",
+      "pinyin": "yáo"
+    },
+    {
+      "text": "秦",
+      "pinyin": "qín"
+    },
+    {
+      "text": "三",
+      "pinyin": "sān"
+    },
+    {
+      "text": "藏",
+      "pinyin": "zàng"
+    },
+    {
+      "text": "法",
+      "pinyin": "fǎ"
+    },
+    {
+      "text": "师",
+      "pinyin": "shī"
+    },
+    {
+      "text": "鸠",
+      "pinyin": "jiū"
+    },
+    {
+      "text": "摩",
+      "pinyin": "mó"
+    },
+    {
+      "text": "罗",
+      "pinyin": "luó"
+    },
+    {
+      "text": "什",
+      "pinyin": "shí"
+    },
+    {
+      "text": "译",
+      "pinyin": "yì"
+    }
   ],
   "chapters": [
     {
@@ -36,6 +96,34 @@
     {
       "chapterId": "chapter_3",
       "title": "大乘正宗分第三"
+    },
+    {
+      "chapterId": "chapter_4",
+      "title": "妙行无住分第四"
+    },
+    {
+      "chapterId": "chapter_5",
+      "title": "如理实见分第五"
+    },
+    {
+      "chapterId": "chapter_6",
+      "title": "正信希有分第六"
+    },
+    {
+      "chapterId": "chapter_7",
+      "title": "无得无说分第七"
+    },
+    {
+      "chapterId": "chapter_8",
+      "title": "依法出生分第八"
+    },
+    {
+      "chapterId": "chapter_9",
+      "title": "一相无相分第九"
+    },
+    {
+      "chapterId": "chapter_10",
+      "title": "庄严净土分第十"
     }
   ]
 }
