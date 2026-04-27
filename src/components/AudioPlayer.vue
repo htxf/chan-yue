@@ -26,6 +26,14 @@ function fmt(sec) {
 
 const timeDisplay = computed(() => `${fmt(props.currentTime)} / ${fmt(props.duration)}`)
 
+function handleZenClick() {
+  const nextZenState = !props.isZenMode
+  emit('update:isZenMode', nextZenState)
+  if (nextZenState && !props.isPlaying) {
+    emit('toggle')
+  }
+}
+
 /** 进度条点击 seek */
 function onProgressClick(e) {
   const rect = e.currentTarget.getBoundingClientRect()
@@ -71,10 +79,10 @@ function onProgressClick(e) {
     
     <button 
       class="zen-btn" 
-      @click="emit('update:isZenMode', !isZenMode)"
+      @click="handleZenClick"
       title="禅定模式"
     >
-      🌙
+      🧘 禅定
     </button>
 
     <button 
@@ -213,13 +221,16 @@ function onProgressClick(e) {
   border: none;
   cursor: pointer;
   padding: 0;
-  font-size: 16px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  font-size: 13px;
+  font-family: 'Noto Serif SC', serif;
+  color: var(--text-muted);
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 .zen-btn:hover {
   opacity: 1;
+  color: rgba(212, 175, 55, 0.8);
 }
 
 @media (max-width: 640px) {

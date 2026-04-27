@@ -320,11 +320,11 @@ function handleToggle() {
           class="fixed inset-0 z-[9999] bg-black flex items-center justify-center cursor-pointer" 
           @click="isZenMode = false"
         >
-          <div class="px-8 md:px-12 text-center zen-text flex flex-col items-center">
-            <div class="text-sm text-neutral-600 tracking-[0.4em] mb-6 font-serif">
-              正在持诵 · {{ extractText(bookMeta?.title) }}
+          <div class="px-8 md:px-12 text-center zen-breathing-container" :class="{ 'is-paused': !isPlaying }">
+            <div class="text-sm text-neutral-400 tracking-[0.4em] mb-6 font-serif">
+              {{ isPlaying ? '正在持诵' : '已暂停' }} · {{ extractText(bookMeta?.title) }}
             </div>
-            <div class="text-2xl md:text-3xl text-amber-100/30 tracking-[0.2em] font-serif leading-relaxed">
+            <div class="text-2xl md:text-3xl text-amber-100/60 tracking-[0.2em] font-serif leading-relaxed">
               {{ extractText(chapterData?.title) }}
             </div>
           </div>
@@ -341,19 +341,29 @@ function handleToggle() {
   overflow-x: hidden;
 }
 
-@keyframes zen-breathing {
-  0% { 
-    text-shadow: none;
-    transform: scale(1);
+@keyframes zen-breath {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.98);
   }
-  100% { 
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  100% {
+    opacity: 1;
     transform: scale(1.02);
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
   }
 }
 
-.zen-text {
-  animation: zen-breathing 8s ease-in-out infinite alternate;
+.zen-breathing-container {
+  animation: zen-breath 5s ease-in-out infinite alternate;
+  will-change: opacity, transform; /* 开启硬件加速，防止移动端卡顿 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zen-breathing-container.is-paused {
+  animation-duration: 12s;
+  filter: opacity(0.7) brightness(0.8);
 }
 
 /* Drawer */
