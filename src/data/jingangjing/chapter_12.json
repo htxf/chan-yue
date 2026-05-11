@@ -1,6 +1,39 @@
 {
   "chapterId": "chapter_12",
-  "title": "尊重正教分第十二",
+  "title": [
+    {
+      "text": "尊",
+      "pinyin": "zūn"
+    },
+    {
+      "text": "重",
+      "pinyin": "zhòng"
+    },
+    {
+      "text": "正",
+      "pinyin": "zhèng"
+    },
+    {
+      "text": "教",
+      "pinyin": "jiào"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    },
+    {
+      "text": "二",
+      "pinyin": "èr"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

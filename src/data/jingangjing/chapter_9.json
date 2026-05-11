@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_9",
-  "title": "一相无相分第九",
+  "title": [
+    {
+      "text": "一",
+      "pinyin": "yī"
+    },
+    {
+      "text": "相",
+      "pinyin": "xiàng"
+    },
+    {
+      "text": "无",
+      "pinyin": "wú"
+    },
+    {
+      "text": "相",
+      "pinyin": "xiàng"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "九",
+      "pinyin": "jiǔ"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

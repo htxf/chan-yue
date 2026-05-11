@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_8",
-  "title": "依法出生分第八",
+  "title": [
+    {
+      "text": "依",
+      "pinyin": "yī"
+    },
+    {
+      "text": "法",
+      "pinyin": "fǎ"
+    },
+    {
+      "text": "出",
+      "pinyin": "chū"
+    },
+    {
+      "text": "生",
+      "pinyin": "shēng"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "八",
+      "pinyin": "bā"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [
@@ -654,7 +683,7 @@
         },
         {
           "lineStart": 33.534,
-          "lineEnd": 35.0,
+          "lineEnd": 35,
           "chars": [
             {
               "text": "所",
@@ -682,7 +711,7 @@
           ]
         },
         {
-          "lineStart": 35.0,
+          "lineStart": 35,
           "lineEnd": 36.174,
           "chars": [
             {

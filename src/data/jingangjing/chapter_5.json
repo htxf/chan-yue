@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_5",
-  "title": "如理实见分第五",
+  "title": [
+    {
+      "text": "如",
+      "pinyin": "rú"
+    },
+    {
+      "text": "理",
+      "pinyin": "lǐ"
+    },
+    {
+      "text": "实",
+      "pinyin": "shí"
+    },
+    {
+      "text": "见",
+      "pinyin": "jiàn"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "五",
+      "pinyin": "wǔ"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

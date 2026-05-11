@@ -1,6 +1,39 @@
 {
   "chapterId": "chapter_15",
-  "title": "持经功德分第十五",
+  "title": [
+    {
+      "text": "持",
+      "pinyin": "chí"
+    },
+    {
+      "text": "经",
+      "pinyin": "jīng"
+    },
+    {
+      "text": "功",
+      "pinyin": "gōng"
+    },
+    {
+      "text": "德",
+      "pinyin": "dé"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    },
+    {
+      "text": "五",
+      "pinyin": "wǔ"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

@@ -1,8 +1,11 @@
 /**
  * 音频播放与经文同步 Composable
  * 
- * 使用 requestAnimationFrame 监听播放进度，
- * 二分查找算法定位当前高亮段落。
+ * 核心设计原则：
+ * 1. 唯一真理来源 —— isPlaying 完全由原生 <audio> 事件驱动，禁止手动赋值
+ * 2. Visibility API —— 后台回前台自动对齐状态，防止假死
+ * 3. 零延迟同步接力 —— onEnded 同步切 src + play()，保住后台音频焦点
+ * 4. 防御性 safePlay —— 捕获系统策略拒绝，自动回退 UI 状态
  */
 import { ref, onUnmounted, computed, unref } from 'vue'
 
@@ -14,6 +17,10 @@ export function useAudioSync(paragraphs, options = {}) {
   const isPlaying = ref(false)
   const isLoaded = ref(false)
   const currentParagraphId = ref(-1)
+
+  // 内部意图标记：业务逻辑认为"应该在播放"
+  // 用于 Visibility API 回前台时判断是否需要恢复播放
+  let _intendPlaying = false
 
   /** 进度百分比 0-100 */
   const progress = computed(() =>
@@ -61,6 +68,85 @@ export function useAudioSync(paragraphs, options = {}) {
     }
   }
 
+  // ============================================================
+  //  1. 原生事件驱动 isPlaying —— 唯一真理来源
+  // ============================================================
+  audio.addEventListener('play', () => {
+    isPlaying.value = true
+    startLoop()
+  })
+
+  audio.addEventListener('playing', () => {
+    isPlaying.value = true
+    startLoop()
+  })
+
+  audio.addEventListener('pause', () => {
+    isPlaying.value = false
+    stopLoop()
+  })
+
+  audio.addEventListener('ended', () => {
+    isPlaying.value = false
+    stopLoop()
+    // 连播由外部通过 playNextTrack 在同步栈内完成
+    if (options.onEnded) options.onEnded()
+  })
+
+  // 网络卡顿 / 系统挂起 —— 标记缓冲中但不影响意图
+  audio.addEventListener('waiting', () => {
+    // 保持 isPlaying = true（因为意图仍是播放），
+    // 但可以在这里添加 loading 指示器
+  })
+
+  audio.addEventListener('suspend', () => {
+    // iOS 后台可能触发 suspend，不主动改 isPlaying
+    // 真正停止时系统会触发 pause 事件
+  })
+
+  audio.addEventListener('loadedmetadata', () => {
+    duration.value = audio.duration
+    isLoaded.value = true
+  })
+
+  // ============================================================
+  //  2. Visibility API —— 后台唤醒状态对齐
+  // ============================================================
+  function onVisibilityChange() {
+    if (document.visibilityState === 'visible') {
+      // 回到前台：对齐检查
+      if (_intendPlaying && audio.paused) {
+        // 业务认为应该播放，但原生已暂停 → 重新激活
+        safePlay()
+      }
+      // 同步一次时间，防止 rAF 在后台被冻结导致进度条跳跃
+      currentTime.value = audio.currentTime
+      if (!audio.paused && !rafId) {
+        startLoop()
+      }
+    }
+  }
+
+  document.addEventListener('visibilitychange', onVisibilityChange)
+
+  // ============================================================
+  //  3. 防御性 safePlay —— 统一入口，捕获系统拒绝
+  // ============================================================
+  function safePlay() {
+    _intendPlaying = true
+    const promise = audio.play()
+    if (promise && typeof promise.catch === 'function') {
+      promise.catch((err) => {
+        console.warn('[ChanYue] 播放被系统拒绝:', err.message)
+        // 系统拒绝后，isPlaying 会被 pause 事件自动置 false
+        // 但以防万一，手动兜底
+        _intendPlaying = false
+        isPlaying.value = false
+        stopLoop()
+      })
+    }
+  }
+
   // ---- Media Session API ----
   function setupMediaSession() {
     if ('mediaSession' in navigator) {
@@ -96,38 +182,31 @@ export function useAudioSync(paragraphs, options = {}) {
     setupMediaSession()
   }
 
+  /**
+   * 零延迟同步接力 —— 连播核心
+   * 
+   * 在 onEnded 的同步执行栈内调用，
+   * 立刻切 src + play()，让 OS 保持音频焦点不释放。
+   * 路由跳转和数据加载由调用方异步处理。
+   */
   function playNextTrack(url) {
     audio.src = url
-    audio.play()
-    isPlaying.value = true
-    startLoop()
+    _intendPlaying = true
+    safePlay()
   }
 
-  audio.addEventListener('loadedmetadata', () => {
-    duration.value = audio.duration
-    isLoaded.value = true
-  })
-
-  audio.addEventListener('ended', () => {
-    isPlaying.value = false
-    stopLoop()
-    if (options.onEnded) options.onEnded()
-  })
-
   function play() {
-    audio.play()
-    isPlaying.value = true
-    startLoop()
+    safePlay()
   }
 
   function pause() {
+    _intendPlaying = false
     audio.pause()
-    isPlaying.value = false
-    stopLoop()
+    // isPlaying 由 pause 事件自动置 false
   }
 
   function toggle() {
-    isPlaying.value ? pause() : play()
+    audio.paused ? play() : pause()
   }
 
   function seek(time) {
@@ -144,9 +223,11 @@ export function useAudioSync(paragraphs, options = {}) {
   }
 
   onUnmounted(() => {
+    _intendPlaying = false
     stopLoop()
     audio.pause()
     audio.src = ''
+    document.removeEventListener('visibilitychange', onVisibilityChange)
   })
 
   return {

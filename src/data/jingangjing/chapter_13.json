@@ -1,6 +1,39 @@
 {
   "chapterId": "chapter_13",
-  "title": "如法受持分第十三",
+  "title": [
+    {
+      "text": "如",
+      "pinyin": "rú"
+    },
+    {
+      "text": "法",
+      "pinyin": "fǎ"
+    },
+    {
+      "text": "受",
+      "pinyin": "shòu"
+    },
+    {
+      "text": "持",
+      "pinyin": "chí"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    },
+    {
+      "text": "三",
+      "pinyin": "sān"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

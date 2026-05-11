@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_10",
-  "title": "庄严净土分第十",
+  "title": [
+    {
+      "text": "庄",
+      "pinyin": "zhuāng"
+    },
+    {
+      "text": "严",
+      "pinyin": "yán"
+    },
+    {
+      "text": "净",
+      "pinyin": "jìng"
+    },
+    {
+      "text": "土",
+      "pinyin": "tǔ"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

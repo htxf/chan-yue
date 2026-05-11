@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_7",
-  "title": "无得无说分第七",
+  "title": [
+    {
+      "text": "无",
+      "pinyin": "wú"
+    },
+    {
+      "text": "得",
+      "pinyin": "dé"
+    },
+    {
+      "text": "无",
+      "pinyin": "wú"
+    },
+    {
+      "text": "说",
+      "pinyin": "shuō"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "七",
+      "pinyin": "qī"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

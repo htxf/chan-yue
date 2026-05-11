@@ -1,6 +1,39 @@
 {
   "chapterId": "chapter_11",
-  "title": "无为福胜分第十一",
+  "title": [
+    {
+      "text": "无",
+      "pinyin": "wú"
+    },
+    {
+      "text": "为",
+      "pinyin": "wéi"
+    },
+    {
+      "text": "福",
+      "pinyin": "fú"
+    },
+    {
+      "text": "胜",
+      "pinyin": "shèng"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    },
+    {
+      "text": "一",
+      "pinyin": "yī"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

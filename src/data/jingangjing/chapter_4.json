@@ -1,6 +1,35 @@
 {
   "chapterId": "chapter_4",
-  "title": "妙行无住分第四",
+  "title": [
+    {
+      "text": "妙",
+      "pinyin": "miào"
+    },
+    {
+      "text": "行",
+      "pinyin": "xíng"
+    },
+    {
+      "text": "无",
+      "pinyin": "wú"
+    },
+    {
+      "text": "住",
+      "pinyin": "zhù"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "四",
+      "pinyin": "sì"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

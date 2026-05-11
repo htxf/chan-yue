@@ -1,6 +1,39 @@
 {
   "chapterId": "chapter_14",
-  "title": "离相寂灭分第十四",
+  "title": [
+    {
+      "text": "离",
+      "pinyin": "lí"
+    },
+    {
+      "text": "相",
+      "pinyin": "xiàng"
+    },
+    {
+      "text": "寂",
+      "pinyin": "jì"
+    },
+    {
+      "text": "灭",
+      "pinyin": "miè"
+    },
+    {
+      "text": "分",
+      "pinyin": "fēn"
+    },
+    {
+      "text": "第",
+      "pinyin": "dì"
+    },
+    {
+      "text": "十",
+      "pinyin": "shí"
+    },
+    {
+      "text": "四",
+      "pinyin": "sì"
+    }
+  ],
   "paragraphs": [
     {
       "lines": [

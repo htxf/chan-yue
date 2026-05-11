@@ -56,7 +56,10 @@ const {
     if (autoPlayNext.value && nextChapter.value) {
       const nextId = nextChapter.value.id || nextChapter.value.chapterId
       const audioUrl = `/audio/${bookId.value}/${nextId}.mp3`
+      // 零延迟同步接力：在同一个同步栈内切 src + play()
+      // 让 OS 保持音频焦点不释放
       playNextTrack(audioUrl)
+      // 路由和数据加载异步跟进，不阻塞音频
       goToNextChapter(true)
     }
   },
@@ -138,6 +141,7 @@ async function loadChapterData() {
   
   // 只有当这是『切章』（原本已经有数据了）时，才等待 350ms 播完淡出动画。
   // 如果是『首次从首页进入』，不需要等，直接去拉数据。
+  // 注意：连播模式下不暂停——音频已经在 playNextTrack 中同步切换了
   if (chapterData.value) {
     await new Promise(resolve => setTimeout(resolve, 350))
     if (!isAutoPlayingNext) {
@@ -161,12 +165,11 @@ async function loadChapterData() {
     // Prefer chapter specific audio, fallback to book audio
     const audioUrl = chapterData.value.audioUrl || bookMeta.value?.audioUrl
     if (audioUrl) {
+      // 连播模式下 loadAudio 不会覆盖已经在播的 src（因为 URL 已经一致）
       loadAudio(audioUrl)
-      // Auto-play next chapter in listening mode
-      if (mode.value === 'listening') {
-        if (!isAutoPlayingNext) {
-          setTimeout(() => play(), 600)
-        }
+      // 非连播的正常进入 listening 模式时，延迟播放等 DOM 就绪
+      if (mode.value === 'listening' && !isAutoPlayingNext) {
+        setTimeout(() => play(), 600)
       }
     } else {
       if (!isAutoPlayingNext) pause()
